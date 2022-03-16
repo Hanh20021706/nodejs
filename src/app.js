@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import morgan from "morgan";
 import productRoute from "../routes/products";
+import userRoute from "../routes/user";
 import mongoose from "mongoose";
 
 
@@ -13,6 +14,7 @@ app.use(express.json())
 
 // route
 app.use("/api",productRoute);
+app.use("/api",userRoute);
 
 // connection database
 mongoose.connect('mongodb://localhost:27017/we16309')
@@ -21,7 +23,7 @@ mongoose.connect('mongodb://localhost:27017/we16309')
 
 
 // connection
-const PORT = 3001;
+const PORT = 8000;
 app.listen(PORT, () => {
     console.log("server is running port", PORT);
 })
