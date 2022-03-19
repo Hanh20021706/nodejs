@@ -4,7 +4,7 @@ import morgan from "morgan";
 import productRoute from "../routes/products";
 import userRoute from "../routes/user";
 import mongoose from "mongoose";
-
+import categoryRoute from "../routes/category";
 
 const app = express();
 // middleware
@@ -15,6 +15,8 @@ app.use(express.json())
 // route
 app.use("/api",productRoute);
 app.use("/api",userRoute);
+app.use("/api",categoryRoute);
+
 
 // connection database
 mongoose.connect('mongodb://localhost:27017/we16309')
