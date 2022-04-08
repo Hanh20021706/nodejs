@@ -4,10 +4,10 @@ import { checkAuth } from "../middlewares/checkAuth";
 
 
 const router = Router();
-router.post("/category",checkAuth ,create);
+router.post("/categories",checkAuth ,create);
 router.get("/categories",checkAuth ,list);
-router.get("/category/:id",checkAuth ,read);
-router.patch("/category/:id",checkAuth ,update);
-router.delete("/category/:id",checkAuth ,remove);
+router.get("/categories/:id",checkAuth ,read);
+router.patch("/categories/:id",checkAuth ,update);
+router.delete("/categories/:id",checkAuth ,remove);
 
 export default router;
