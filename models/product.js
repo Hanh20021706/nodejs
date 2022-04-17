@@ -3,16 +3,24 @@ import mongoose, { Schema ,ObjectId} from "mongoose";
 const productSchema = new Schema ({
     name : {
         type : String,
-        minlength : 5,
-        required : true
+        required : true,
+        index: true
     },
     price : {
-        type : Number,
+        type : String,
         required : true
+    },
+    img: {
+        type: String,
+        
     },
     desc : {
         type : String,
         required : true
+    },
+    status: {
+        type: Number,
+        default: 0
     },
     category : {
         type : ObjectId, 
@@ -22,5 +30,6 @@ const productSchema = new Schema ({
     }
 
 } , { timestamps : true});
+productSchema.index({'$**':'text'})
 
 export default mongoose.model('Product' , productSchema);

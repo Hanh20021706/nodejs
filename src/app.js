@@ -24,10 +24,9 @@ mongoose.connect('mongodb://localhost:27017/we16309')
 
 
 // connection
-const PORT = 8000;
-app.listen(PORT, () => {
-    console.log("server is running port", PORT);
-})
+app.listen(8000, () => {
+    console.log("sever đang chạy trên cổng 3005");
+});
 /**
  * npm i - g json-server : cai dat modules vao o he thong
  * npm i --save express : 
